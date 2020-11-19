@@ -1,2 +1,10 @@
+com/fastcampus/demo/repository/OrderDetailRepositoryTest.java
+ com.fastcampus.demo.repository.OrderDetailRepositoryTest
 com/fastcampus/demo/DemoApplicationTests.java
  com.fastcampus.demo.DemoApplicationTests
+com/fastcampus/demo/repository/ItemRepositoryTest.java
+ com.fastcampus.demo.repository.ItemRepositoryTest
+com/fastcampus/demo/repository/CategoryRepositoryTest.java
+ com.fastcampus.demo.repository.CategoryRepositoryTest
+com/fastcampus/demo/repository/UserRepositoryTest.java
+ com.fastcampus.demo.repository.UserRepositoryTest
