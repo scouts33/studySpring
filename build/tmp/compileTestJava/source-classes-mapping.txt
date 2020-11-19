@@ -1,0 +1,2 @@
+com/fastcampus/demo/DemoApplicationTests.java
+ com.fastcampus.demo.DemoApplicationTests
