@@ -14,13 +14,14 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@ToString(exclude = {"item", "orderGroup"})
 public class OrderDetail {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDateTime orderAt;
+    private String status;
 
     private LocalDateTime arrivalDate;
 
@@ -36,4 +37,9 @@ public class OrderDetail {
 
     private String updatedBy;
 
+    @ManyToOne
+    private Item item;
+
+    @ManyToOne
+    private OrderGroup orderGroup;
 }

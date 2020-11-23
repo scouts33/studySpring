@@ -4,18 +4,18 @@ package com.fastcampus.demo.model.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString(exclude = {"user", "orderDetail"})
 public class OrderGroup {
 
     @Id
@@ -47,4 +47,10 @@ public class OrderGroup {
     private LocalDateTime updatedAt;
 
     private String updatedBy;
+
+    @ManyToOne
+    private User user;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "orderGroup")
+    private List<OrderDetail> orderDetail;
 }

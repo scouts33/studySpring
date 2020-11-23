@@ -1,12 +1,16 @@
-com/fastcampus/demo/repository/OrderDetailRepositoryTest.java
- com.fastcampus.demo.repository.OrderDetailRepositoryTest
 com/fastcampus/demo/repository/UserRepositoryTest.java
  com.fastcampus.demo.repository.UserRepositoryTest
-com/fastcampus/demo/repository/CategoryRepositoryTest.java
- com.fastcampus.demo.repository.CategoryRepositoryTest
-com/fastcampus/demo/DemoApplicationTests.java
- com.fastcampus.demo.DemoApplicationTests
+com/fastcampus/demo/repository/AdminUserRepositoryTest.java
+ com.fastcampus.demo.repository.AdminUserRepositoryTest
 com/fastcampus/demo/repository/PartnerRepositoryTest.java
  com.fastcampus.demo.repository.PartnerRepositoryTest
+com/fastcampus/demo/DemoApplicationTests.java
+ com.fastcampus.demo.DemoApplicationTests
+com/fastcampus/demo/repository/OrderGroupRepositoryTest.java
+ com.fastcampus.demo.repository.OrderGroupRepositoryTest
+com/fastcampus/demo/repository/OrderDetailRepositoryTest.java
+ com.fastcampus.demo.repository.OrderDetailRepositoryTest
+com/fastcampus/demo/repository/CategoryRepositoryTest.java
+ com.fastcampus.demo.repository.CategoryRepositoryTest
 com/fastcampus/demo/repository/ItemRepositoryTest.java
  com.fastcampus.demo.repository.ItemRepositoryTest
