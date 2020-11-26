@@ -26,10 +26,15 @@ public class UserApiController implements CrudInterface<UserApiRequest, UserApiR
         return userApiService.create(request);
     }
 
+    @GetMapping("")
+    public Header index() {
+        return null;
+    }
+
     @Override
     @GetMapping("{id}")
-    public Header index(@PathVariable(name = "id") Long id) {
-        return null;
+    public Header<UserApiResponse> show(@PathVariable(name = "id") Long id) {
+        return userApiService.show(id);
     }
 
     @Override
