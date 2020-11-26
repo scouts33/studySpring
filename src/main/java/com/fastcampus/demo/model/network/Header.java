@@ -6,15 +6,44 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Header {
+public class Header<T> {
 
-    private String transactionTime;
+    private LocalDateTime transactionTime;
 
     private String resultCode;
 
     private String description;
+
+    private T data;
+
+    public static <T> Header<T> Ok() {
+        return (Header<T>) Header.builder()
+                .transactionTime(LocalDateTime.now())
+                .resultCode("OK")
+                .description("OK")
+                .build();
+    }
+
+    public static <T> Header<T> Ok(T data) {
+        return (Header<T>) Header.builder()
+                .transactionTime(LocalDateTime.now())
+                .resultCode("OK")
+                .description("OK")
+                .data(data)
+                .build();
+    }
+
+    public static <T> Header<T> ERROR(String description) {
+        return (Header<T>)Header.builder()
+            .transactionTime(LocalDateTime.now())
+            .resultCode("ERROR")
+            .description(description)
+            .build();
+    }
 }
