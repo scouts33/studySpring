@@ -49,7 +49,22 @@ public class UserApiService implements CrudInterface<UserApiRequest, UserApiResp
 
     @Override
     public Header<UserApiResponse> update(Header<UserApiRequest> request) {
-        return null;
+        UserApiRequest userApiRequest = request.getData();
+        Optional<User> optional = userRepository.findById(userApiRequest.getId());
+
+        return optional.map(user -> {
+            user.setAccount(userApiRequest.getAccount())
+                    .setPassword(userApiRequest.getPassword())
+                    .setStatus(userApiRequest.getStatus())
+                    .setPhoneNumber(userApiRequest.getPhoneNumber())
+                    .setEmail(userApiRequest.getEmail())
+                    .setRegisteredAt(userApiRequest.getRegisteredAt())
+                    .setUnregisteredAt(userApiRequest.getUnRegisteredAt());
+            return user;
+        })
+                .map(user -> userRepository.save(user))
+                .map(user -> response(user))
+                .orElseGet(()->Header.ERROR("데이터 없음"));
     }
 
     @Override

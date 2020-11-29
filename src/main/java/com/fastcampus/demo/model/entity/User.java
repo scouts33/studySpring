@@ -1,6 +1,7 @@
 package com.fastcampus.demo.model.entity;
 
 import lombok.*;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -12,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @ToString(exclude = {"orderGroupList"})
 @Builder
+@Accessors(chain = true)
 public class User {
 
     @Id
